@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Tutorials{% endblock title %}
+
+{{% block body %}
+
+<div class="container my-4">
+<h1 class="my-4 text-center">Latest Tutorials for you</h1>
+<h1 class="my-4 text-center">By Edureka</h1>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {%for tutorial in tutorials%}
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <iframe width="400" height="315" src={{tutorial.link}} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h3><b>{{tutorial.desc}}</b></h3>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+              </div>
+            </div>
+          </div>   
+    
+         {%endfor%}
+{% endblock body %}}
+

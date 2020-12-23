@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration{% endblock title %}
+
+{% block body %}
+<br>
+<h2><b>Join Us Today</b></h2>
+<br>
+    <form action="register" method="POST">
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="First Name"><br>
+        <input type="text" name="last_name" placeholder="Last Name"><br>
+        <input type="text" name="username" placeholder="Userame"><br>
+        <input type="email" name="email" placeholder="Email Address"><br>
+        <input type="password" name="password1" placeholder="Password"><br>
+        <input type="password" name="password2" placeholder="Confirm Password"><br>
+        <input type="submit">
+
+    </form>
+<br>
+<div>
+    {% for message in messages %}
+    <h5>{{message}}</h5>
+    {%endfor%}
+</div>
+
+{% endblock body %}

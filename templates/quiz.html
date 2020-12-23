@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Quick Quizzes{% endblock title %}
+
+{{% block body %}
+
+<div class="container my-4">
+<h1 class="my-4 text-center">Try Our Quick Quizzes For Your Brain Stroming</h1>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {%for quiz in quizzes%}
+      <div class="col">
+        <div class="card shadow-sm">
+          <iframe width="400" height="315" src={{quiz.link}} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+          <h1><b>{{quiz.desc}}</b></h1>
+          <h3>{{quiz.creator}}</h3>
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+
+{% endblock body %}}
+
